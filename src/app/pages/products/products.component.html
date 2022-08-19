@@ -1,32 +1,11 @@
 
 <section class="products"  (click)="onNotify()">
 
-    <mat-card class="card" *ngFor="let product of products">
-        <mat-card-header> 
-            <mat-card-title>{{product.name}} </mat-card-title>
+    <app-product  [product]="product"  *ngFor="let product of products">
 
-               </mat-card-header>    
+    </app-product>
+    
 
-<!--HEADER-->
-
-            <mat-card-content> {{product.description}} 
-                {{2+1}} </mat-card-content>  
-
-<!--CONTENIDO-->
-
-        <mat-card-actions> 
-            <button mat-flat-button color="primary">
-                Buy {{product.price | currency}}
-                <mat-icon>add_shopping_cart</mat-icon>      
-
-<!-- en google: listado de iconos de angular matirial -->
-
-            </button>
-            
-        </mat-card-actions>    
-
-<!--ACTIONS-->
-    </mat-card>
 
 </section>
 
