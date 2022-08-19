@@ -14,12 +14,10 @@
 <!--CONTENIDO-->
 
     <mat-card-actions> 
-        <button mat-flat-button color="primary">
+        <button mat-flat-button color="primary" (click)="onClick()">
             Buy {{product.price | currency}}
             <mat-icon>add_shopping_cart</mat-icon>      
-
-<!-- en google: listado de iconos de angular matirial -->
-
+                    <!-- en google: listado de iconos de angular matirial -->
         </button>
         
     </mat-card-actions>    

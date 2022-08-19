@@ -33,4 +33,12 @@ products!: Product[];
     window.alert('You will be notified when the product goes on sale');
   }
 
+
+  addToCart(product: Product): void{
+    console.log("Add to cart: ",product );  //del hijo al padre ya llega info 
+
+  }
+
+
+
 }

@@ -1,7 +1,10 @@
 
-<section class="products"  (click)="onNotify()">
+<section class="products"  >
 
-    <app-product  [product]="product"  *ngFor="let product of products">
+    <app-product 
+     (addToCartCick)="addToCart($event)"
+    [product]="product"  
+    *ngFor="let product of products">
 
     </app-product>
     
@@ -18,6 +21,19 @@
 
 
 <!--  ---------------------------------------------------------------------  -->
+
+
+
+
+<!-- 
+<button mat-flat-button color="primary" (click)="onNotify()">  Ejemplo de llamada a funcion  </button>
+ -->
+
+<!-- 
+    llamada a una funcion asi es un sin sentido pero funciona 
+{{onNotify()}}
+ -->
+
 
 
 <!--
