@@ -8,13 +8,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MiguelcodeComponent } from './pages/miguelcode/miguelcode.component';
 import {HttpClientModule} from '@angular/common/http';
 import { MaterialModule } from 'src/app/material.modulo';
+import { CartComponent } from './shared/componentes/cart/cart.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MiguelcodeComponent
+    MiguelcodeComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

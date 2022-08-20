@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../interfaces/product.interface';
 
 
@@ -6,14 +6,13 @@ import { Product } from '../interfaces/product.interface';
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
+  //Punto estable,  lo siguiente iniciar con la propirdad CahngeDetection 
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent  {
 @Input() product!: Product;
 @Output() addToCartCick = new EventEmitter<Product>();
-  constructor() { }
+  
 
-  ngOnInit(): void { 
-  }
 
   onClick(): void{
 
