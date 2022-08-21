@@ -1,12 +1,13 @@
 <!-- <p>header works!</p> -->
 
 
-    <mat-toolbar color="primary">         
-      <span>My Application</span>
+    <mat-toolbar color="primary">  
+      <a [routerLink]="['/']"><span>My Application</span></a>       
+      
  <!--      {{quantity$ | async | json}} - Quantity   
       {{total$ | async | json}} -  Quantity   -->
       <span class="spacer"></span>
-      <app-cart></app-cart>
+      <app-cart class="mouseHover" (click)="goToCheckout()"></app-cart>
 
       <!-- {{cart$ | async | json}} - Quantity   -->
       <!--git: Ya esta funcionando  adduna parte del carrito de compra --> 
