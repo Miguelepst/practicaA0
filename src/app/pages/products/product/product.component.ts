@@ -1,12 +1,13 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { Product } from '../interfaces/product.interface';
 
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  styleUrls: ['./product.component.scss'],
   //Punto estable,  lo siguiente iniciar con la propirdad CahngeDetection 
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductComponent  {
 @Input() product!: Product;
