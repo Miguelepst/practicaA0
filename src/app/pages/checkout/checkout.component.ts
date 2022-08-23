@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { delay, switchMap, tap } from 'rxjs';
-import { ShoppingCartService } from 'src/app/shared/componentes/header/services/shopping-cart.service';
+import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.service';
 import { Details, Order } from 'src/app/shared/interfaces/order.interface';
 import { Store } from 'src/app/shared/interfaces/stores.interface';
 import { Product } from '../products/interfaces/product.interface';
-import { DataService } from '../products/services/data.service';
+import { DataService } from '../../shared/services/data.service';
 
 import { Router } from '@angular/router';
 import { ProductsService } from '../products/services/products.service';

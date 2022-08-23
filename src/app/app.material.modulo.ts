@@ -9,7 +9,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-    exports : [MatToolbarModule,
+    exports : [
+        MatToolbarModule,
         MatCardModule, 
         MatButtonModule, 
         MatIconModule,

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CheckoutRoutingModule } from './checkout-routing.module';
 import { CheckoutComponent } from './checkout.component';
 import { FormsModule } from '@angular/forms';
-import { MaterialModule } from 'src/app/material.modulo';
+import { MaterialModule } from 'src/app/app.material.modulo';
 import { DetailsComponent } from './details/details.component';
 
 

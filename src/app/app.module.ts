@@ -5,9 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/componentes/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MiguelcodeComponent } from './pages/miguelcode/miguelcode.component';
 import {HttpClientModule} from '@angular/common/http';
-import { MaterialModule } from 'src/app/material.modulo';
+import { MaterialModule } from 'src/app/app.material.modulo';
 import { CartComponent } from './shared/componentes/cart/cart.component';
 
 
@@ -15,7 +14,6 @@ import { CartComponent } from './shared/componentes/cart/cart.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    MiguelcodeComponent,
     CartComponent
   ],
   imports: [
