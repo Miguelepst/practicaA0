@@ -8,6 +8,7 @@ import { Product } from '../interfaces/product.interface';
 })
 
 export class ProductsService {
+  //esta variable (apiURL) suele ir en otro fichero de envairoment
   private apiURL='http://localhost:3000/products';
 
   constructor (private http: HttpClient) { }
@@ -20,6 +21,11 @@ export class ProductsService {
     
   }
 
+  updateStock(productId: number, stock: number): Observable<any> {
+    const body = { "stock": stock };
+    //return this.http.patch<any>(`${this.apiURl}/${productId}`, body);
+    return this.http.patch<any>(`${this.apiURL}/${productId}`, body);
+  }
   
   
 

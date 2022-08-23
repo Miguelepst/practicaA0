@@ -40,7 +40,15 @@ export class ShoppingCartService {
      }
 
 
+     resetCart(): void {   // resetear observables 
+        this.cartSubject.next([]);
+        this.totalSubject.next(0);
+        this.quantitySubject.next(0);
+        this.products = [];
+      }
+     
 
+ 
     private addToCart(product: Product): void {
         const isProductInCart = this.products.find(({ id }) => id === product.id);
 

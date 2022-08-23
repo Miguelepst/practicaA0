@@ -14,7 +14,13 @@
 <!--CONTENIDO-->
 
     <mat-card-actions> 
-        <button mat-flat-button color="primary" (click)="onClick()">
+        <button 
+        mat-flat-button 
+        color="primary" 
+        (click)="onClick()"
+        [disabled]="product.stock === 0"
+        
+        >
             Buy {{product.price | currency}}
             <mat-icon>add_shopping_cart</mat-icon>      
                     <!-- en google: listado de iconos de angular matirial -->

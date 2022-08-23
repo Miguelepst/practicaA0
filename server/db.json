@@ -65,7 +65,7 @@
       "price": 5,
       "description": "En Hackeando del cerebro de tus compradores, Corti nos revela cómo muchas compañías crean productos digitales o procesos de venta capaces de conectar con la psicología del comprador.",
       "categoryId": 1,
-      "stock": 10
+      "stock": 6
     },
     {
       "id": 3,
@@ -73,7 +73,7 @@
       "price": 17,
       "description": "In this book, the reader will be able to focus on one concept of Angular in deep.",
       "categoryId": 1,
-      "stock": 10
+      "stock": 9
     },
     {
       "id": 4,
@@ -81,7 +81,7 @@
       "price": 19,
       "description": "Ideal for Android smartphones and tablets, and MIL cameras. SanDisk Memory Zone app for easy file management (Download and Installation Required).",
       "categoryId": 2,
-      "stock": 10
+      "stock": 8
     },
     {
       "id": 5,
@@ -89,7 +89,7 @@
       "price": 399,
       "description": "5K Video - Shoot stunning video with up to 5K resolution, perfect for maintaining detail even when zooming in",
       "categoryId": 2,
-      "stock": 10
+      "stock": 8
     },
     {
       "id": 6,
@@ -163,6 +163,89 @@
       "date": "22/8/2022",
       "pickup": false,
       "id": 4
+    },
+    {
+      "name": "Luz Velez",
+      "store": {
+        "id": 1,
+        "name": "Park Row at Beekman St",
+        "address": "38 Park Row",
+        "city": "New York",
+        "openingHours": "10:00 - 14:00 and 17:00 - 20:30"
+      },
+      "date": "22/8/2022",
+      "pickup": false,
+      "id": 5
+    },
+    {
+      "name": "Miguel Gutierrez",
+      "shippingAddress": "Manzana 118 lote 6 sector 19 de febrero",
+      "city": "Cartagena",
+      "date": "22/8/2022",
+      "pickup": true,
+      "id": 6
+    },
+    {
+      "name": "Liz Yaneth ",
+      "shippingAddress": "Avenida El pozon",
+      "city": "Cartagena",
+      "date": "22/8/2022",
+      "isDelivery": true,
+      "id": 7
+    },
+    {
+      "name": "Gaby",
+      "store": {
+        "id": 2,
+        "name": "Store Alcalá",
+        "address": "Calle de Alcalá, 21",
+        "city": "Madrid",
+        "openingHours": "10:00 - 14:00 and 17:00 - 20:30"
+      },
+      "date": "22/8/2022",
+      "isDelivery": false,
+      "id": 8
+    },
+    {
+      "name": "Miguel Gutierrez",
+      "store": {
+        "id": 2,
+        "name": "Store Alcalá",
+        "address": "Calle de Alcalá, 21",
+        "city": "Madrid",
+        "openingHours": "10:00 - 14:00 and 17:00 - 20:30"
+      },
+      "date": "22/8/2022",
+      "isDelivery": false,
+      "id": 9
+    },
+    {
+      "name": "Miguel Gutierrez",
+      "store": "",
+      "date": "22/8/2022",
+      "isDelivery": false,
+      "id": 10
+    },
+    {
+      "name": "Alexandra",
+      "shippingAddress": "poner direccion",
+      "city": "poner ciudad",
+      "date": "22/8/2022",
+      "isDelivery": true,
+      "id": 11
+    },
+    {
+      "name": "Julia Velez",
+      "store": {
+        "id": 5,
+        "name": "Monmouth St",
+        "address": "11 Monmouth Street",
+        "city": "London",
+        "openingHours": "10:00 - 14:00 and 17:00 - 20:30"
+      },
+      "date": "22/8/2022",
+      "isDelivery": false,
+      "id": 12
     }
   ],
   "detailsOrders": [
@@ -182,6 +265,85 @@
       ],
       "orderId": 4,
       "id": 2
+    },
+    {
+      "details": [
+        {
+          "productId": 1,
+          "productName": "Essential TypeScript 4: From Beginner to Pro",
+          "quantity": 1
+        },
+        {
+          "productId": 2,
+          "productName": "Hackeando el cerebro de tus compradores: PsychoGrowth",
+          "quantity": 1
+        },
+        {
+          "productId": 6,
+          "productName": "CL3 Rated High-Speed 4K HDMI Cable - 6 Feet",
+          "quantity": 1
+        },
+        {
+          "productId": 4,
+          "productName": "SanDisk 128GB Ultra MicroSDXC UHS-I Memory Card with Adapter",
+          "quantity": 1
+        }
+      ],
+      "orderId": 5,
+      "id": 3
+    },
+    {
+      "details": [
+        {
+          "productId": 1,
+          "productName": "Essential TypeScript 4: From Beginner to Pro",
+          "quantity": 1
+        }
+      ],
+      "orderId": 6,
+      "id": 4
+    },
+    {
+      "details": [
+        {
+          "productId": 5,
+          "productName": "GoPro HERO9 Black - Waterproof Action Camera with Front LCD",
+          "quantity": 1
+        }
+      ],
+      "orderId": 7,
+      "id": 5
+    },
+    {
+      "details": [
+        {
+          "productId": 1,
+          "productName": "Essential TypeScript 4: From Beginner to Pro",
+          "quantity": 1
+        }
+      ],
+      "orderId": 8,
+      "id": 6
+    },
+    {
+      "details": [],
+      "orderId": 9,
+      "id": 7
+    },
+    {
+      "details": [],
+      "orderId": 10,
+      "id": 8
+    },
+    {
+      "details": [],
+      "orderId": 11,
+      "id": 9
+    },
+    {
+      "details": [],
+      "orderId": 12,
+      "id": 10
     }
   ]
 }

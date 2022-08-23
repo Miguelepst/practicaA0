@@ -34,8 +34,12 @@ export class CheckoutComponent implements OnInit {
 
   constructor(
     private dataSvc: DataService,
-    private shoppingCartSvc: ShoppingCartService
-    ) { }
+    private router: Router,
+    private shoppingCartSvc: ShoppingCartService,
+    private productsSvc: ProductsService
+    ) { 
+      this.checkIfCartIsEmpty();
+    }
 
 
 
@@ -50,19 +54,26 @@ export class CheckoutComponent implements OnInit {
    const data: Order = {
     ...formData,
     date: this.getCurrentDay(),
-    pickup: this.isDelivery
+    isDelivery: this.isDelivery
    }
    
    this.dataSvc.saveOrder(data)
    .pipe(
     tap(res => console.log('Order ->', res)),
-    switchMap((order) => {
-      const orderId=order.id;
+    switchMap(({ id: orderId }) => {
+      //const orderId=order.id;
       const details =  this.prepareDetails() ;  /* {} */ 
       return this.dataSvc.saveDetailsOrder({details,orderId});
     }),
 
-    tap(res => console.log('finish -->', res)),
+    //tap(res => console.log('finish -->', res)),
+    tap( ()=> this.router.navigate(['/checkout/thank-you-page'])),
+    delay(2000),
+    tap(() => this.shoppingCartSvc.resetCart()),
+
+    
+
+
    )
    .subscribe();
 
@@ -86,13 +97,21 @@ export class CheckoutComponent implements OnInit {
   }
 
   private prepareDetails(): Details[] {
+    //const details: Details[] = [];
     const details: any = [];
 
     this.cart.forEach((product:Product )=> {
     const { id:productId, name:productName, qty:quantity,stock } = product;
-        
-              
-       details.push({productId,productName,quantity});
+    const updateStock = (stock - quantity);        
+
+    this.productsSvc.updateStock(productId, updateStock)
+    .pipe(
+      tap(() => details.push({ productId, productName, quantity }))
+    )
+    .subscribe()
+
+    
+       //details.push({productId,productName,quantity});
         
 
 //        console.log("que es este valor --",{productId,productName,quantity});
@@ -149,6 +168,24 @@ export class CheckoutComponent implements OnInit {
 
 
 
+  }
+
+
+
+  private checkIfCartIsEmpty(): void {
+    this.shoppingCartSvc.cartAction$
+      .pipe(
+        tap((products: Product[]) => //this.cart=products
+        
+        {
+          if (Array.isArray(products) && !products.length) {
+            this.router.navigate(['/products']);
+          }
+        }
+
+        )
+      )
+      .subscribe()
   }
 
 
