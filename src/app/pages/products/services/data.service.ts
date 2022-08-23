@@ -11,13 +11,13 @@ import { Store } from "src/app/shared/interfaces/stores.interface";
   })
 
 export class DataService {
-    private apiURL='http://localhost:3000/stores';
+    private apiURL='http://localhost:3000';
 
     constructor(private http: HttpClient){    }
 
     getStores(): Observable<Store[]> {
         
-        return this.http.get<Store[]>(this.apiURL);          
+        return this.http.get<Store[]>(`${this.apiURL}/stores`);          
     }
 
     saveOrder(order: Order): Observable<Order> {

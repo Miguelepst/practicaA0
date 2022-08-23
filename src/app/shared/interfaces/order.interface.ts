@@ -2,7 +2,7 @@ export interface Details{
     id: number;
     orderId: number;
     quantity: number;
-    productName:string;
+    productName: string;
 
 }
 

@@ -7,6 +7,9 @@ import { Store } from 'src/app/shared/interfaces/stores.interface';
 import { Product } from '../products/interfaces/product.interface';
 import { DataService } from '../products/services/data.service';
 
+import { Router } from '@angular/router';
+import { ProductsService } from '../products/services/products.service';
+
 
 
 
@@ -26,7 +29,7 @@ export class CheckoutComponent implements OnInit {
     city: ''
   };
   stores : Store[]  = [ ];
-  isDelivery = false;
+  isDelivery = true;
   cart: Product[] = [];
 
   constructor(
@@ -55,7 +58,7 @@ export class CheckoutComponent implements OnInit {
     tap(res => console.log('Order ->', res)),
     switchMap((order) => {
       const orderId=order.id;
-      const details =  /* {} */ this.prepareDetails() ;  
+      const details =  this.prepareDetails() ;  /* {} */ 
       return this.dataSvc.saveDetailsOrder({details,orderId});
     }),
 
@@ -83,11 +86,24 @@ export class CheckoutComponent implements OnInit {
   }
 
   private prepareDetails(): Details[] {
-    const details: Details[] = [];
-    
-      this.cart.forEach(res => {
-      console.log(res);
+    const details: any = [];
+
+    this.cart.forEach((product:Product )=> {
+    const { id:productId, name:productName, qty:quantity,stock } = product;
+        
+              
+       details.push({productId,productName,quantity});
+        
+
+//        console.log("que es este valor --",{productId,productName,quantity});
+        
+
      })
+
+
+     
+
+
 /*      const { id: productId, name: productName, qty: quantity, stock } = product;
       const updateStock = (stock - quantity);
 
